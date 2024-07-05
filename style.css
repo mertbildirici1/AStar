@@ -1,8 +1,25 @@
-html, body {
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
   }
-  canvas {
-    display: block;
+  
+  .container {
+    text-align: center;
+  }
+  
+  #canvas-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  #message {
+    margin-bottom: 20px;
+    font-size: 24px;
   }
   

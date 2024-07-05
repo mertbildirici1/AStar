@@ -22,12 +22,18 @@ function Spot(i, j) {
       this.wall = true;
     }
   
+    // Is this the start point?
+    this.start = false;
+  
     // Display me
     this.show = function(col) {
       if (this.wall) {
-        fill(112, 50, 126);
+        fill(255); // White color for walls
         noStroke();
         ellipse(this.i * w + w / 2, this.j * h + h / 2, w / 2, h / 2);
+      } else if (this.start) {
+        fill(0, 255, 0); // Green color for the start point
+        rect(this.i * w, this.j * h, w, h);
       } else if (col) {
         fill(col);
         rect(this.i * w, this.j * h, w, h);
@@ -63,4 +69,4 @@ function Spot(i, j) {
         this.neighbors.push(grid[i + 1][j + 1]);
       }
     }
-  }
+}
