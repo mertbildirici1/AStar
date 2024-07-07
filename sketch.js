@@ -104,16 +104,6 @@ function draw() {
     if (current === end) {
       noLoop();
       console.log("DONE!");
-      // Display message and circle the endpoint
-      fill(0);
-      textSize(24);
-      textAlign(CENTER);
-      text('Endpoint Found!', width / 2, height - 40);
-
-      stroke(0);
-      strokeWeight(4);
-      noFill();
-      ellipse(end.i * w + w / 2, end.j * h + h / 2, w, h);
     }
 
     // Best option moves from openSet to closedSet
@@ -196,6 +186,19 @@ function draw() {
     vertex(path[i].i * w + w / 2, path[i].j * h + h / 2);
   }
   endShape();
+
+  // Display endpoint found text over everything else
+  if (current === end) {
+    fill(0, 0, 0);
+    textSize(24);
+    textAlign(CENTER);
+    text('Endpoint Found!', width / 2, height - 40);
+
+    stroke(0, 240, 24);
+    strokeWeight(10);
+    noFill();
+    ellipse(end.i * w + w / 2, end.j * h + h / 2, w, h);
+  }
 }
 
 function mousePressed() {
