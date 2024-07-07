@@ -78,7 +78,8 @@ function setup() {
     fill(0);
     textSize(24);
     textAlign(CENTER);
-  }
+    text('Click somewhere on the map to set the endpoint', width / 2, height / 2); // Instruction text
+}
   
 
 function draw() {
@@ -204,6 +205,8 @@ function mousePressed() {
     end = grid[i][j];
     end.wall = false;
     userClicked = true;
+    // Redraw the background to clear instruction text
+    background(45, 197, 244);
     loop(); // Start the draw loop
   }
 }
